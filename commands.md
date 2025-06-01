@@ -66,6 +66,16 @@ Usage:  docker buildx build [OPTIONS] PATH | URL | -
 $ docker images
 ```
 
+## Команда `image rm`
+Команда для удаления образа
+```shell
+$ docker image rm <имя или ID образа>
+```
+либо можно воспользоваться сокращённойй версией:
+```shell
+$ docker rmi <имя или ID образа>
+```
+
 ## Команда `ps`
 позволяет посмотреть список всех запущенных контейнеров
 ```shell
@@ -100,5 +110,17 @@ $ docker stop <имя контейнера или его ID>
 Однако: запущенный контейнер удалить нельзя. Сначала необходимо выполнить его `stop`  
 Если при удалении контейнера что-то произошло и удаление не сработало, то можно повторить команду с флагом `--force`
 ```shell
-$ docker rm <-f> <имя контейнера или его ID>
+$ docker rm [-f] <имя контейнера или его ID>
 ```
+
+## Команда `system prune`
+Команда является жёстким ресетом для Docker. Она очищает весь кэщ Docker и удаляет все образы и контейнеры
+```shell
+$ docker system prune -a
+```
+WARNING! This will remove:
+- all stopped containers
+- all networks not used by at least one container
+- all images without at least one container associated to them
+- all build cache
+  Are you sure you want to continue? [y/N] 
