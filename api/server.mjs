@@ -14,4 +14,4 @@ app.get('/', (req, res) => {
   res.json(db)
 })
 
-app.listen(PORT, () => console.log(`Listening for requests on port: ${PORT}`))
+app.listen(PORT, () => console.log(`>> Listening for requests on port: ${PORT} <<`))
