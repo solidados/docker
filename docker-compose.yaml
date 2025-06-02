@@ -1,0 +1,20 @@
+version: "v2.36.0-desktop.1"
+services:
+  api:
+    build: ./api
+    container_name: api
+    ports:
+      - '3001:3000'
+    volumes:
+      - ./api:/app
+      - /app/node_modules
+  ui:
+    build: ./ui
+    container_name: react-ui
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./ui:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
